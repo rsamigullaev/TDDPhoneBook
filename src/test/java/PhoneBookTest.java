@@ -6,6 +6,18 @@ public class PhoneBookTest {
 
     @Test
     public void test_new_two_contacts() {
-        Assertions.assertEquals(2, pb.add());
+        int count;
+        pb.add("John", "89037438233");
+        count = pb.add("Doe", "89037438233");
+        Assertions.assertEquals(2, count);
+    }
+
+    @Test
+    public void test_new_two_contacts_with_duplicated_name() {
+        int count;
+        pb.add("John", "89037438233");
+        pb.add("Doe", "89037438233");
+        count = pb.add("Doe", "89037438233");
+        Assertions.assertEquals(2, count);
     }
 }
