@@ -1,9 +1,7 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class PhoneBook {
-    private final Map<String, String> book = new HashMap<>();
+    private final SortedMap<String, String> book = new TreeMap<>();
 
     public int add(String name, String number) {
         if (!book.containsKey(name)) {
@@ -28,6 +26,7 @@ public class PhoneBook {
     }
 
     public String printAllNames() {
-        return null;
+        if (book.isEmpty()) return null;
+        return book.keySet().toString();
     }
 }

@@ -46,15 +46,16 @@ public class PhoneBookTest {
     @Test
     public void test_print_all_one() {
         pb.add("John", "89037438233");
-        Assertions.assertEquals("John",pb.printAllNames());
+        Assertions.assertEquals("[John]",pb.printAllNames());
     }
 
     @Test
     public void test_print_all_names_three() {
         pb.add("John", "89037438233");
         pb.add("Doe", "89037438233");
+        pb.add("Doc", "89037438233");
         pb.add("Mark", "89037438233");
-        Assertions.assertEquals("Doe, John, Mark", pb.printAllNames());
+        Assertions.assertEquals("[Doc, Doe, John, Mark]", pb.printAllNames());
     }
 
     @Test
