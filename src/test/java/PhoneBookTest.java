@@ -31,4 +31,15 @@ public class PhoneBookTest {
     public void test_not_found() {
         Assertions.assertNull(pb.findByNumber(""));
     }
+
+    @Test
+    public void test_find_john_by_name() {
+        pb.add("John", "89037438233");
+        Assertions.assertEquals("89037438233", pb.findByNumber("John"));
+    }
+
+    @Test
+    public void test_not_found_by_name() {
+        Assertions.assertNull(pb.findByNumber(""));
+    }
 }
