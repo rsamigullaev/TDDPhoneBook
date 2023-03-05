@@ -24,6 +24,11 @@ public class PhoneBookTest {
     @Test
     public void test_find_john() {
         pb.add("John", "89037438233");
-        Assertions.assertEquals("Jonh", pb.findByNumber("89037438233"));
+        Assertions.assertEquals("John", pb.findByNumber("89037438233"));
+    }
+
+    @Test
+    public void test_not_found() {
+        Assertions.assertNull(pb.findByNumber(""));
     }
 }
