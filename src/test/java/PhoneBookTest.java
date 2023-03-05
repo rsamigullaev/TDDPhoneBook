@@ -42,4 +42,23 @@ public class PhoneBookTest {
     public void test_not_found_by_name() {
         Assertions.assertNull(pb.findByName(""));
     }
+
+    @Test
+    public void test_print_all_one() {
+        pb.add("John", "89037438233");
+        Assertions.assertEquals("John",pb.printAllNames());
+    }
+
+    @Test
+    public void test_print_all_names_three() {
+        pb.add("John", "89037438233");
+        pb.add("Doe", "89037438233");
+        pb.add("Mark", "89037438233");
+        Assertions.assertEquals("Doe, John, Mark", pb.printAllNames());
+    }
+
+    @Test
+    public void test_print_all_names_null() {
+        Assertions.assertNull(pb.printAllNames());
+    }
 }
