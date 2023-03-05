@@ -20,4 +20,10 @@ public class PhoneBookTest {
         count = pb.add("Doe", "89037438233");
         Assertions.assertEquals(2, count);
     }
+
+    @Test
+    public void test_find_john() {
+        pb.add("John", "89037438233");
+        Assertions.assertEquals("Jonh", pb.findByNumber("89037438233"));
+    }
 }
